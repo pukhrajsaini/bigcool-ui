@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "bigcool-ui": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bigcool-ui"
+    }
+  },
+  "defaultProject": "bigcool-ui",
+  "cli": {
+    "analytics": "f4787539-aa8b-46f9-98d9-2d1f8d2b3a3f"
+  }
 }

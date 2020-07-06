@@ -1,0 +1,46 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over">
+    <mat-toolbar color="primary" style="border-bottom: 1px solid #fff; height: 64px;">
+      <button mat-icon-button color="accent" (click)="drawer.close()">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar>
+    <ul id="menu-items">
+      <li><button mat-button (click)="onNavigate('about')">About Us</button></li>
+      <li><button mat-button (click)="onNavigate('services')">Services</button></li>
+      <li><button mat-button (click)="onNavigate('team')">Team</button></li>
+      <li><button mat-button (click)="onNavigate('contact')">Contact Us</button></li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+    <nav color="primary" class="navbar mat-elevation-z2">
+      <button mat-icon-button color="accent" (click)="drawer.open()">
+        <mat-icon id="icon">menu</mat-icon>
+      </button>
+      <button mat-button class="bigcool" (click)="onNavigate('home')">BigCool</button>
+
+      <div class="menu-items">
+        <button mat-button (click)="onNavigate('home')">Home</button>
+        <button mat-button (click)="onNavigate('about')">About Us</button>
+        <button mat-button (click)="onNavigate('services')">Services</button>
+        <button mat-button (click)="onNavigate('team')">Team</button>
+        <button mat-button (click)="onNavigate('contact')">Contact Us</button>
+      </div>
+    </nav>
+    <div style="margin-top: 64px;"></div>
+    <app-slider id="home"></app-slider>
+    <app-about id="about"></app-about>
+    <app-services id="services"></app-services>
+    <app-team id="team"></app-team>
+    <app-contact id="contact"></app-contact>
+    <footer class="footer">
+      <h3>Follow Us</h3>
+      <div>
+        <a mat-raised-button href="https://www.facebook.com/" target="_blank" color="accent">Facebook</a>
+        <a mat-raised-button href="https://www.youtube.com/" target="_blank" color="warn">Youtube</a>
+        <a mat-raised-button href="https://www.instagram.com/" target="_blank" color="accent">Instagram</a>
+      </div>
+      <p>all Copyrights reserved BigCool</p>
+    </footer>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,22 @@
+.contact{
+  padding: 20px 35px;
+  .col-lg-6{
+    padding: 10px 33px;
+    mat-list{
+      margin: 0em;
+      padding: 0em;
+    }
+  }
+  mat-card.col-lg-6{
+    form{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+button{
+  outline: none;
+  border: none;
+  max-width: 100px;
+}

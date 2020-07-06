@@ -1,0 +1,16 @@
+<section class="team">
+  <h1 class="text-teal text-center mt-4" style="font-weight: bold;">Our Expert Team</h1>
+  <div class="row">
+    <ng-container *ngFor="let expert of experts">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="card card-box">
+          <img class="card-img-top" [src]="expert.pImg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title text-center"> {{expert.name | titlecase}} </h4>
+            <p class="card-text text-center"> {{expert.expertise | titlecase}} </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
