@@ -7,11 +7,11 @@ const routes: Routes = [
     path: '', loadChildren: () => import('./web/web.module').then(m => m.WebModule)
   },
   {
-    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    path: 'bigcooladminexpert', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
-  // {
-  //   path: '**', loadChildren: () => import('./web/web.module').then(m => m.WebModule)
-  // }
+  {
+    path: '**', loadChildren: () => import('./web/web.module').then(m => m.WebModule)
+  }
 ];
 
 @NgModule({

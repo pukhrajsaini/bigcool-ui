@@ -12,10 +12,11 @@
 
 #icon {
   display: none;
+  color: white;
 }
 .bigcool {
   font-family: "Playball", cursive;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   position: absolute;
 }
@@ -25,48 +26,54 @@
   position: absolute;
   right: 5%;
 }
-button{
+button {
   outline: none;
   border: none;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(6, 85, 85);
   color: #ffffff;
   padding: 20px;
-  h4{
+  h4 {
     font-weight: bold;
   }
-  a{
+  a {
     text-decoration: none;
     margin: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #icon {
-    display: block;
-    margin-left: 33%;
-  }
-  .bigcool {
-    font-size: 20px;
-    left: 15%;
-  }
   .menu-items {
     display: none;
   }
+  #icon {
+    display: block;
+    margin-left: 40%;
+  }
+  .bigcool {
+    font-size: 20px;
+    left: 33%;
+  }
   mat-drawer {
     background-color: #32838f;
-    min-width: 30%;
+    min-width: 70%;
+    position: fixed;
+    .bigcool {
+      left: 73px;
+      color: white;
+    }
+    mat-icon{
+      color: white;
+    }
   }
   #menu-items {
     margin: 0em;
     padding: 0em;
-    position: fixed;
-    left: 10px;
     list-style-type: none;
     color: #ffffff;
   }

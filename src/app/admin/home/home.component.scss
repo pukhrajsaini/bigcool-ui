@@ -1,0 +1,32 @@
+.navbar {
+  position: fixed;
+  top: 0em;
+  .logout-btn {
+    position: absolute;
+    right: 3%;
+  }
+}
+.bigcool {
+  font-family: "Playball", cursive;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.queries {
+  position: absolute;
+  top: 80px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  background-color: #e0e7e7;
+  box-sizing: border-box;
+  padding: 10px;
+  mat-card {
+    margin: 5px 0px;
+  }
+}

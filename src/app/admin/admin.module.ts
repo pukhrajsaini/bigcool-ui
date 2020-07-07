@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 
 import { Routes, RouterModule} from '@angular/router';
+import { MaterialModule } from '../shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -14,7 +16,13 @@ const routes: Routes = [
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModule,
+    HttpClientModule
+  ],
+  exports: [
+    MaterialModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

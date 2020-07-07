@@ -13,17 +13,17 @@ export class TeamComponent implements OnInit {
     {
       name: 'suresh saini',
       expertise : 'Installation expert',
-      pImg: '/assets/images/suresh.jpg'
+      pImg: '/assets/images/suresh.png'
     },
     {
       name: 'dinesh saini',
       expertise : 'repairing expert',
-      pImg: '/assets/images/dinesh.jpg'
+      pImg: '/assets/images/dinesh.png'
     },
     {
       name: 'omprakash saini',
       expertise : 'Installation expert',
-      pImg: '/assets/images/omprakash.jpg'
+      pImg: '/assets/images/omprakash.png'
     }
   ];
 

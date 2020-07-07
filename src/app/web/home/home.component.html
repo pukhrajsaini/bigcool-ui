@@ -1,8 +1,9 @@
 <mat-drawer-container>
   <mat-drawer #drawer mode="over">
     <mat-toolbar color="primary" style="border-bottom: 1px solid #fff; height: 64px;">
-      <button mat-icon-button color="accent" (click)="drawer.close()">
+      <button mat-icon-button (click)="drawer.close()">
         <mat-icon>home</mat-icon>
+        <span mat-button (click)="onNavigate('home')" class="bigcool">BigCool</span>
       </button>
     </mat-toolbar>
     <ul id="menu-items">
@@ -14,7 +15,7 @@
   </mat-drawer>
   <mat-drawer-content>
     <nav color="primary" class="navbar mat-elevation-z2">
-      <button mat-icon-button color="accent" (click)="drawer.open()">
+      <button mat-icon-button (click)="drawer.open()">
         <mat-icon id="icon">menu</mat-icon>
       </button>
       <button mat-button class="bigcool" (click)="onNavigate('home')">BigCool</button>

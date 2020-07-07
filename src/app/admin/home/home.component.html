@@ -1,1 +1,16 @@
-<p>admin works!</p>
+<mat-toolbar color="primary" class="navbar">
+  <button class="bigcool" mat-button>BigCool</button>
+  <button mat-raised-button color="warn" class="logout-btn" mat-button (click)="onLogOut()">Log Out</button>
+</mat-toolbar>
+<div class="queries" *ngFor="let query of queries">
+    <mat-card>
+      <p> Name:  {{query.name}} </p>
+      <p> Mobile No. {{query.mobile}} </p>
+      <p> Email Id : {{query.email}} </p>
+      <P> Query : {{query.query}} </P>
+      <button mat-icon-button (click)="onDeleteQuery(query._id)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card>
+    <mat-card></mat-card>
+</div>

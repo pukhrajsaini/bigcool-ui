@@ -39,7 +39,7 @@
           <textarea matInput placeholder="Ask something" formControlName="query" rows="4"></textarea>
           <mat-error>field is required</mat-error>
         </mat-form-field>
-        <button mat-raised-button type="submit" color="primary" >Send</button>
+        <button mat-raised-button type="submit" color="primary" [disabled]="queryForm.invalid" >Send</button>
       </form>
 
     </mat-card>
