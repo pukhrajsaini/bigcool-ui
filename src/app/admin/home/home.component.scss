@@ -1,6 +1,7 @@
 .navbar {
   position: fixed;
   top: 0em;
+  z-index: 999;
   .logout-btn {
     position: absolute;
     right: 3%;
@@ -19,14 +20,34 @@ button {
 
 .queries {
   position: absolute;
-  top: 80px;
-  left: 5%;
-  right: 5%;
-  width: 90%;
+  top: 58px;
+  width: 100%;
   background-color: #e0e7e7;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
+  min-height: 91vh;
   mat-card {
     margin: 5px 0px;
+    button.delete{
+      position: absolute;
+      right: 0em;
+      top: 0px;
+    }
+    button.mks, span.mks{
+      position: absolute;
+      right: 0;
+      bottom: 0em;
+    }
+    span.mks{
+      color: rgb(107, 235, 107);
+      right: 10px;
+    }
   }
+}
+.bg-solved{
+  background-color: rgb(221, 248, 248);
+}
+
+mat-spinner{
+  margin: 42vh auto;
 }

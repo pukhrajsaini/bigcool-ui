@@ -3,7 +3,8 @@
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <h2> <u>Feel Free to Contact</u></h2>
-      <p>Hello Everyone! Have a great day :) If you want to know something or you have any suggestion then please mail me. Thank You.</p>
+      <p>Hello Everyone! Have a great day :) If you want to know something or you have any suggestion then please mail
+        me. Thank You.</p>
 
       <mat-list *ngFor="let info of contactInfo">
         <mat-list-item>
@@ -14,11 +15,11 @@
     </div>
 
     <mat-card class="col-lg-6 col-md-6 col-sm-12" color="primary">
-      <h2>
+      <h2 *ngIf="!isLoading">
         <u>Send a query</u>
       </h2>
 
-      <form [formGroup]="queryForm" (ngSubmit)="onQuerySubmit()" >
+      <form [formGroup]="queryForm" (ngSubmit)="onQuerySubmit()"  *ngIf="!isLoading">
         <mat-form-field appearance="outline">
           <mat-label>Full Name</mat-label>
           <input type="text" matInput placeholder="Name" formControlName="name" required>
@@ -39,9 +40,9 @@
           <textarea matInput placeholder="Ask something" formControlName="query" rows="4"></textarea>
           <mat-error>field is required</mat-error>
         </mat-form-field>
-        <button mat-raised-button type="submit" color="primary" [disabled]="queryForm.invalid" >Send</button>
+        <button mat-raised-button type="submit" color="primary" [disabled]="queryForm.invalid">Send</button>
       </form>
-
+      <mat-spinner class="spinner" color="accent" *ngIf="isLoading"></mat-spinner>
     </mat-card>
   </div>
 </section>

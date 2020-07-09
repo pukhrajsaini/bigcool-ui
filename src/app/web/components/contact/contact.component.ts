@@ -10,14 +10,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ContactComponent implements OnInit {
 
-
+  isLoading = false;
   constructor(private $cs: ContactService, private $snackBar: MatSnackBar) { }
   queryForm: FormGroup = this.$cs.queryForm();
 
   contactInfo = [
     {
       icon: 'location_on',
-      line: 'Jasinghpura khor, Jaipur, Rajasthan'
+      line: 'Jaisinghpura khor, Jaipur, Rajasthan'
     },
     {
       icon: 'contact_phone',
@@ -34,8 +34,10 @@ export class ContactComponent implements OnInit {
 
   onQuerySubmit() {
     const query = this.queryForm.value;
+    this.isLoading = true;
     this.$cs.addQuery(query).subscribe(data => {
       this.openSnackBar('we will contact you soon', 'ok');
+      this.isLoading = false;
       this.queryForm.reset();
     });
 

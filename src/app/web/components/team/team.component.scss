@@ -1,6 +1,7 @@
 .team {
   padding: 20px;
-  background-color: rgb(233, 241, 241);
+  background-image: linear-gradient(135deg, #E0E7E7, rgb(212, 212, 140));
+  background-attachment: fixed;
   div.col-sm-12{
     display: flex;
     justify-content: center;
@@ -8,7 +9,7 @@
   }
 }
 .card-box {
-  width: 80%;
+  width: 90%;
   img{
     max-height: 258px;
     background-color: teal;

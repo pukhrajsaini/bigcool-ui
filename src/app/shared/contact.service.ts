@@ -9,7 +9,7 @@ import { QueryModel } from './models/query.model';
 })
 export class ContactService {
 
-  queryApi = '/api/query';
+  queryApi = 'http://localhost:3000/api/query';
 
   constructor(private $http: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class ContactService {
   }
 
   addQuery(query: any): Observable<any> {
-    return this.$http.post(this.queryApi, query);
+    return this.$http.post<any>(this.queryApi, query, { observe: 'response' });
   }
 
   getAllQueries(): Observable<QueryModel[]> {
@@ -33,6 +33,11 @@ export class ContactService {
   // tslint:disable-next-line:variable-name
   deleteQuery(_id: string): Observable<any> {
     return this.$http.delete<any>(`${this.queryApi}/${_id}`);
+  }
+
+  // tslint:disable-next-line:variable-name
+  patchQuery(_id: string): Observable<any> {
+    return this.$http.patch<any>(`${this.queryApi}/${_id}`, null);
   }
 
 }

@@ -2,15 +2,25 @@
   <button class="bigcool" mat-button>BigCool</button>
   <button mat-raised-button color="warn" class="logout-btn" mat-button (click)="onLogOut()">Log Out</button>
 </mat-toolbar>
-<div class="queries" *ngFor="let query of queries">
-    <mat-card>
-      <p> Name:  {{query.name}} </p>
-      <p> Mobile No. {{query.mobile}} </p>
-      <p> Email Id : {{query.email}} </p>
-      <P> Query : {{query.query}} </P>
-      <button mat-icon-button (click)="onDeleteQuery(query._id)" >
-        <mat-icon>delete</mat-icon>
-      </button>
-    </mat-card>
-    <mat-card></mat-card>
+<div class="queries" *ngIf="!isLoading">
+  <mat-card *ngFor="let query of queries; index as i" [ngClass]="query.solved?'bg-solved':''" >
+    <span> <b>{{i+1}}.</b> </span> &nbsp;&nbsp; <span> Queried at {{query.createdAt|date:'short'}} </span>
+    <hr>
+    <div class="row">
+      <span class="col-lg-4 col-md-4 col-sm-12"><b>Name</b> : {{query.name | titlecase}} </span>
+      <span class="col-lg-4 col-md-4 col-sm-12"><b>Mobile no</b> : {{query.mobile}} </span>
+      <span class="col-lg-4 col-md-4 col-sm-12"><b>Email</b> : {{query.email}} </span>
+      <P class="col-lg-4 col-md-4 col-sm-12"> <b>Query</b> : {{query.query}} </P>
+    </div>
+    <button class="delete" mat-icon-button (click)="onDeleteQuery(query._id)" color="warn" title="Delete Query">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button *ngIf="!query.solved" class="mks" mat-button color="primary" (click)="onSolvedQuery(query._id)">
+      Mark as Solved
+    </button>
+    <span class="mks" *ngIf="query.solved">
+      <mat-icon>done</mat-icon>
+    </span>
+  </mat-card>
 </div>
+<mat-spinner *ngIf="isLoading" color="accent"></mat-spinner>

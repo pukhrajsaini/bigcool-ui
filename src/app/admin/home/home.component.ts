@@ -11,11 +11,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
 
-  queries: QueryModel[];
+  queries: any;
+  isLoading = false;
   constructor(private $router: Router, private $cs: ContactService, private $snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    // this.fetchAllQueries();
+    this.fetchAllQueries();
   }
 
   onLogOut() {
@@ -23,19 +24,36 @@ export class HomeComponent implements OnInit {
   }
 
   fetchAllQueries() {
-    this.$cs.getAllQueries().subscribe(data => this.queries = data);
+    this.isLoading = true;
+    this.$cs.getAllQueries().subscribe(data => {
+      this.queries = data;
+      this.isLoading = false;
+    });
   }
 
   // tslint:disable-next-line:variable-name
   onDeleteQuery(_id: string) {
-    this.$cs.deleteQuery(_id).subscribe(() => {
-      this.openSnackBar('query deleted', 'ok');
+    this.$cs.deleteQuery(_id).subscribe(data => {
+      if (!data) {
+        this.openSnackBar('query deleted', 'ok');
+        this.fetchAllQueries();
+      }
     });
   }
 
   openSnackBar(data: string, action: string) {
     this.$snackBar.open(data, action, {
       duration: 2000
+    });
+  }
+
+  // tslint:disable-next-line:variable-name
+  onSolvedQuery(_id: string) {
+    this.$cs.patchQuery(_id).subscribe(data => {
+      if (data.status === 'success') {
+        this.openSnackBar('Query marked as Solved ', 'ok');
+        this.fetchAllQueries();
+      }
     });
   }
 
