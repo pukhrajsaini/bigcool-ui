@@ -35,15 +35,16 @@ export class HomeComponent implements OnInit {
   onDeleteQuery(_id: string) {
     this.$cs.deleteQuery(_id).subscribe(data => {
       if (!data) {
-        this.openSnackBar('query deleted', 'ok');
         this.fetchAllQueries();
+        this.openSnackBar('query deleted', 'ok');
       }
     });
   }
 
   openSnackBar(data: string, action: string) {
     this.$snackBar.open(data, action, {
-      duration: 2000
+      duration: 2000,
+      panelClass: 'snackbar'
     });
   }
 
@@ -51,8 +52,8 @@ export class HomeComponent implements OnInit {
   onSolvedQuery(_id: string) {
     this.$cs.patchQuery(_id).subscribe(data => {
       if (data.status === 'success') {
-        this.openSnackBar('Query marked as Solved ', 'ok');
         this.fetchAllQueries();
+        this.openSnackBar('Query marked as Solved ', 'ok');
       }
     });
   }

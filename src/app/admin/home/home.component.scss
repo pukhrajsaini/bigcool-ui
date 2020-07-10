@@ -49,5 +49,15 @@ button {
 }
 
 mat-spinner{
-  margin: 42vh auto;
+  position: fixed;
+  top: 44vh;
+  left: 45%;
+  height: 2em;
+}
+
+
+@media only screen and (max-width: 768px) {
+  mat-spinner{
+    left: 33%;
+  }
 }

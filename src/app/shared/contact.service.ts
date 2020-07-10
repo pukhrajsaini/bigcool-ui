@@ -9,7 +9,7 @@ import { QueryModel } from './models/query.model';
 })
 export class ContactService {
 
-  queryApi = 'http://localhost:3000/api/query';
+  queryApi = '/api/query';
 
   constructor(private $http: HttpClient) { }
 
